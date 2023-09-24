@@ -2,14 +2,16 @@ package org.example;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.example.Enums.PositionsEnum;
+
+import java.util.Date;
 
 @AllArgsConstructor
 @Getter
-public class Staff {
+public class Customer {
     private String name;
+    private Date birthDate;
     private String phone;
     private String email;
-    private PositionsEnum position;
+    private double discount;
 
 }
