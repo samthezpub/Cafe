@@ -14,9 +14,12 @@ public class App
         String configPath = "file:src/main/resources/spring-config.xml";
         var context = new FileSystemXmlApplicationContext(configPath);
 
+        DBDispatch.getInstance();
+
         Drink drink = new Drink("Кола", "Cola", 100.0);
         Order order = new Order(drink);
-        System.out.println(order.getMenuItem().getNameRussian());
+
+        DBDispatch.getInstance().addOrder(order);
 
     }
 }

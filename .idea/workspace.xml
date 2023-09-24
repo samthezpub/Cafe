@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36085b3e-2702-447f-872b-34bf00fc1458" name="Changes" comment="Staff class added, PositionsEnum for position and role in cafe">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Dish.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Drink.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Interfaces/MenuItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PersonalSchedule.java" afterDir="false" />
+    <list default="true" id="36085b3e-2702-447f-872b-34bf00fc1458" name="Changes" comment="MenuItem interface (Drink, Dish),&#10;OrderInfo, PersonalSchedule">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/DBDispatch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Order.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -49,7 +45,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/Java Projects/SpringHello",
+    "last_opened_file_path": "D:/Java Dependencies/postgresql-42.5.1.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -68,7 +64,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695572203920</updated>
-      <workItem from="1695572204950" duration="4774000" />
+      <workItem from="1695572204950" duration="8616000" />
     </task>
     <task id="LOCAL-00001" summary="maven config added">
       <option name="closed" value="true" />
@@ -86,7 +82,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695574460455</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="MenuItem interface (Drink, Dish),&#10;OrderInfo, PersonalSchedule">
+      <option name="closed" value="true" />
+      <created>1695587228002</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695587228002</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,6 +99,22 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="maven config added" />
     <MESSAGE value="Staff class added, PositionsEnum for position and role in cafe" />
-    <option name="LAST_COMMIT_MESSAGE" value="Staff class added, PositionsEnum for position and role in cafe" />
+    <MESSAGE value="MenuItem interface (Drink, Dish),&#10;OrderInfo, PersonalSchedule" />
+    <option name="LAST_COMMIT_MESSAGE" value="MenuItem interface (Drink, Dish),&#10;OrderInfo, PersonalSchedule" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.jdks/openjdk-20.0.2/lib/src.zip!/java.xml/com/sun/org/apache/xerces/internal/util/ParserConfigurationSettings.java</url>
+          <line>249</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

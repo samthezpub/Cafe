@@ -3,7 +3,8 @@ package org.example;
 import lombok.Getter;
 import org.example.Interfaces.MenuItem;
 
-import java.util.Date;
+import java.sql.Date;
+import java.util.Calendar;
 
 @Getter
 public class Order {
@@ -12,6 +13,11 @@ public class Order {
 
     public Order(MenuItem menuItem) {
         this.menuItem = menuItem;
-        this.time = new Date();
+
+        java.util.Date currentDate = Calendar.getInstance().getTime();
+        // Преобразуем его в java.sql.Date
+        Date sqlDate = new Date(currentDate.getTime());
+
+        this.time = sqlDate;
     }
 }
