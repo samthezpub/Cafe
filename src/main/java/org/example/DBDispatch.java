@@ -2,10 +2,10 @@ package org.example;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Properties;
 
 public class DBDispatch {
@@ -52,16 +52,72 @@ public class DBDispatch {
         }
     }
 
+    public List<String> getPositions() {
+        String sql = "SELECT name FROM positions";
+        ResultSet resultSet;
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            resultSet = preparedStatement.executeQuery();
+
+
+            List<String > list = new ArrayList<>();
+            while (resultSet.next()){
+                list.add(resultSet.getString("name"));
+            }
+
+            return list;
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void addPosition(String position) {
+        String sql = "INSERT INTO positions (name) VALUES (?)";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setString(1, position);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
     public void addOrder(Order order) {
         try {
 
             String sql = "INSERT INTO \"order\" (\"menuItem\", price, date) VALUES (?, ?, ?)";
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1,order.getMenuItem().getNameRussian());
-            preparedStatement.setDouble(2,order.getMenuItem().getPrice());
-            preparedStatement.setDate(3,order.getTime());
+            preparedStatement.setString(1, order.getMenuItem().getNameRussian());
+            preparedStatement.setDouble(2, order.getMenuItem().getPrice());
+            preparedStatement.setDate(3, order.getTime());
 
+
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void editOrderById(Order order, int id) {
+        try {
+            String sql = "UPDATE \"order\" SET \"menuItem\"=?, price=?, date=? WHERE id = ?";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, order.getMenuItem().getNameRussian());
+            preparedStatement.setDouble(2, order.getMenuItem().getPrice());
+            preparedStatement.setDate(3, order.getTime());
+            preparedStatement.setInt(4, id);
 
             preparedStatement.executeUpdate();
             preparedStatement.close();

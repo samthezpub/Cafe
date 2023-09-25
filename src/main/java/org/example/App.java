@@ -16,10 +16,14 @@ public class App
 
         DBDispatch.getInstance();
 
-        Drink drink = new Drink("Кола", "Cola", 100.0);
+        Drink drink = new Drink("Кофе", "Coffee", 40.0);
         Order order = new Order(drink);
 
-        DBDispatch.getInstance().addOrder(order);
+        DBDispatch.getInstance().editOrderById(order, 2);
+
+
+
+        System.out.println(DBDispatch.getInstance().getPositions());
 
     }
 }
