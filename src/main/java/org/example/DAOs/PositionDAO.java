@@ -15,7 +15,7 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 public class PositionDAO {
-    private Connection connection;
+    private final Connection connection;
 
     public void addPosition(Position position) {
         String sql = "INSERT INTO positions (name) VALUES (?)";
@@ -26,28 +26,6 @@ public class PositionDAO {
             preparedStatement.setString(1, position.getName());
             preparedStatement.executeUpdate();
             preparedStatement.close();
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-    public List<String> getPositions() {
-        String sql = "SELECT * FROM positions";
-        ResultSet resultSet;
-
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-
-            resultSet = preparedStatement.executeQuery();
-
-
-            List<String > list = new ArrayList<>();
-            while (resultSet.next()){
-                list.add(resultSet.getString("name"));
-            }
-
-            return list;
-
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

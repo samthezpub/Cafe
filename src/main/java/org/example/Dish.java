@@ -1,11 +1,10 @@
 package org.example;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import org.example.Interfaces.MenuItem;
+import org.example.Interfaces.IMenuItem;
 
 @AllArgsConstructor
-public class Dish implements MenuItem {
+public class Dish implements IMenuItem {
     private String nameRussian;
     private String nameEnglish;
     private double price;

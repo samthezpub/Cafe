@@ -1,6 +1,6 @@
 package org.example.Interfaces;
 
-public interface MenuItem {
+public interface IMenuItem {
     String getNameRussian();
     String getNameEnglish();
     double getPrice();

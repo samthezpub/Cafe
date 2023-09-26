@@ -1,6 +1,7 @@
 package org.example;
 
-import org.example.Interfaces.MenuItem;
+import org.example.DAOs.MenuItemDAO;
+import org.example.DAOs.StaffDAO;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import java.io.FileInputStream;
@@ -45,6 +46,11 @@ public class App
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
+        StaffDAO staffDAO = new StaffDAO(connection);
+
+        MenuItemDAO menuItemDAO = new MenuItemDAO(connection);
+        menuItemDAO.addMenuItem(new Drink("Чай", "Tea", 30));
 
     }
 }
