@@ -9,6 +9,6 @@ public class Staff {
     private String name;
     private String phone;
     private String email;
-    private String position;
+    private Position position;
 
 }

@@ -3,6 +3,13 @@ package org.example;
 import org.example.Interfaces.MenuItem;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Properties;
+
 /**
  * Hello world!
  *
@@ -14,16 +21,30 @@ public class App
         String configPath = "file:src/main/resources/spring-config.xml";
         var context = new FileSystemXmlApplicationContext(configPath);
 
-        DBDispatch.getInstance();
+        Connection connection;
 
-        Drink drink = new Drink("Кофе", "Coffee", 40.0);
-        Order order = new Order(drink);
+        Properties properties = new Properties();
+        String url = null;
+        String username = null;
+        String password = null;
 
-        DBDispatch.getInstance().editOrderById(order, 2);
+        try {
+            FileInputStream input = new FileInputStream("src/main/resources/db.properties");
+            properties.load(input);
+            input.close();
 
+            url = properties.getProperty("db.url");
+            username = properties.getProperty("db.username");
+            password = properties.getProperty("db.password");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-
-        System.out.println(DBDispatch.getInstance().getPositions());
+        try {
+            connection = DriverManager.getConnection(url, username, password);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }
