@@ -9,7 +9,7 @@ import java.util.Date;
 @Getter
 public class Customer {
     private String name;
-    private Date birthDate;
+    private String birthDate;
     private String phone;
     private String email;
     private double discount;

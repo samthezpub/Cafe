@@ -28,4 +28,17 @@ public class MenuItemDAO {
             throw new RuntimeException(e);
         }
     }
+    public void editPrice(String name, double price){
+        String sql = "UPDATE menu SET price=? WHERE name = ?";
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql);) {
+
+            preparedStatement.setDouble(1, price);
+            preparedStatement.setString(2, name);
+
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

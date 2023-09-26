@@ -2,15 +2,11 @@ package org.example.DAOs;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.example.DBDispatch;
 import org.example.Position;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @AllArgsConstructor

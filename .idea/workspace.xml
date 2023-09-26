@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36085b3e-2702-447f-872b-34bf00fc1458" name="Changes" comment="DAO refactor.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MenuItemDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/StaffDAO.java" afterDir="false" />
+    <list default="true" id="36085b3e-2702-447f-872b-34bf00fc1458" name="Changes" comment="PositionDAO, StaffDAO, MenuItemDAO">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/CustomerDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MenuItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MenuItemDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/PositionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/PositionDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DBDispatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DBDispatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Drink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Interfaces/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Interfaces/IMenuItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/StaffDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/StaffDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DBDispatch.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +71,7 @@
       <workItem from="1695662539037" duration="47000" />
       <workItem from="1695669499236" duration="1146000" />
       <workItem from="1695675226182" duration="1247000" />
-      <workItem from="1695757692953" duration="3057000" />
+      <workItem from="1695757692953" duration="5289000" />
     </task>
     <task id="LOCAL-00001" summary="maven config added">
       <option name="closed" value="true" />
@@ -115,7 +113,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695760562685</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="PositionDAO, StaffDAO, MenuItemDAO">
+      <option name="closed" value="true" />
+      <created>1695762400393</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1695762400393</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,7 +133,8 @@
     <MESSAGE value="MenuItem interface (Drink, Dish),&#10;OrderInfo, PersonalSchedule" />
     <MESSAGE value="getPositions, addPositions" />
     <MESSAGE value="DAO refactor." />
-    <option name="LAST_COMMIT_MESSAGE" value="DAO refactor." />
+    <MESSAGE value="PositionDAO, StaffDAO, MenuItemDAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="PositionDAO, StaffDAO, MenuItemDAO" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

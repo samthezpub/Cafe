@@ -28,4 +28,33 @@ public class StaffDAO {
             throw new RuntimeException(e);
         }
     }
+    public void editTelAndEmail(Staff staff, String phone, String email){
+        String sql = "UPDATE staff SET phone=?, email=? WHERE name=? AND position=?";
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql);) {
+
+            preparedStatement.setString(1, phone);
+            preparedStatement.setString(2, email);
+            preparedStatement.setString(3, staff.getName());
+            preparedStatement.setString(4, staff.getPosition().getName());
+
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void editTel(Staff staff, String phone){
+        String sql = "UPDATE staff SET phone=? WHERE name=? AND position=?";
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql);) {
+
+            preparedStatement.setString(1, phone);
+            preparedStatement.setString(2, staff.getName());
+            preparedStatement.setString(3, staff.getPosition().getName());
+
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
