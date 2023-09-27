@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36085b3e-2702-447f-872b-34bf00fc1458" name="Changes" comment="PositionDAO, StaffDAO, MenuItemDAO">
+    <list default="true" id="36085b3e-2702-447f-872b-34bf00fc1458" name="Changes" comment="DELETE method for CustomerDAO, StaffDAO, MenuItemDAO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/CustomerDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MenuItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MenuItemDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/StaffDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/StaffDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DBDispatch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Drink.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Staff.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +71,7 @@
       <workItem from="1695669499236" duration="1146000" />
       <workItem from="1695675226182" duration="1247000" />
       <workItem from="1695757692953" duration="5289000" />
-      <workItem from="1695834095384" duration="1852000" />
+      <workItem from="1695834095384" duration="4818000" />
     </task>
     <task id="LOCAL-00001" summary="maven config added">
       <option name="closed" value="true" />
@@ -120,7 +121,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695762400393</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="DELETE method for CustomerDAO, StaffDAO, MenuItemDAO">
+      <option name="closed" value="true" />
+      <created>1695835987847</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1695835987847</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,7 +142,8 @@
     <MESSAGE value="getPositions, addPositions" />
     <MESSAGE value="DAO refactor." />
     <MESSAGE value="PositionDAO, StaffDAO, MenuItemDAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="PositionDAO, StaffDAO, MenuItemDAO" />
+    <MESSAGE value="DELETE method for CustomerDAO, StaffDAO, MenuItemDAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="DELETE method for CustomerDAO, StaffDAO, MenuItemDAO" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

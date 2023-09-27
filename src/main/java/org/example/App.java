@@ -50,9 +50,24 @@ public class App
 
         StaffDAO staffDAO = new StaffDAO(connection);
 
-        CustomerDAO customerDAO = new CustomerDAO(connection);
-        customerDAO.deleteCustomer(1);
+        var waiters = staffDAO.getAllWaiters();
+        for (int i = 0; i < waiters.size(); i++) {
+            System.out.println(waiters.get(i).toString());
+        }
 
+        var conditers = staffDAO.getAllConditers();
+        for (int i = 0; i < conditers.size(); i++) {
+            System.out.println(conditers.get(i).toString());
+        }
+
+
+        CustomerDAO customerDAO = new CustomerDAO(connection);
+        MenuItemDAO menuItemDAO = new MenuItemDAO(connection);
+
+        var menuItems = menuItemDAO.getAll();
+        for (int i = 0; i < menuItems.size(); i++) {
+            System.out.println(menuItems.get(i).toString());
+        }
 
     }
 }

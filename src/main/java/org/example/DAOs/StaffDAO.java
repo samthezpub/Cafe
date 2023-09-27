@@ -2,11 +2,16 @@ package org.example.DAOs;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.example.Drink;
+import org.example.Position;
 import org.example.Staff;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @AllArgsConstructor
@@ -78,6 +83,55 @@ public class StaffDAO {
             preparedStatement.setInt(1, id);
 
             preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public List<Staff> getAllWaiters(){
+        String sql = "SELECT * FROM staff WHERE position=?";
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql);) {
+
+            preparedStatement.setString(1, "Официант");
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            List<Staff> waiters = new ArrayList<>();
+
+            while(resultSet.next()){
+
+                waiters.add(new Staff(
+                        resultSet.getString("name"),
+                        resultSet.getString("phone"),
+                        resultSet.getString("email"),
+                        new Position(resultSet.getString("position"))
+                ));
+            }
+
+            return waiters;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<Staff> getAllConditers(){
+        String sql = "SELECT * FROM staff WHERE position=?";
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql);) {
+
+            preparedStatement.setString(1, "Повар-кондитер");
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            List<Staff> waiters = new ArrayList<>();
+
+            while(resultSet.next()){
+
+                waiters.add(new Staff(
+                        resultSet.getString("name"),
+                        resultSet.getString("phone"),
+                        resultSet.getString("email"),
+                        new Position(resultSet.getString("position"))
+                ));
+            }
+
+            return waiters;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

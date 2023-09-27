@@ -2,9 +2,11 @@ package org.example;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.ToString;
 import org.example.Interfaces.IMenuItem;
 
 @AllArgsConstructor
+@ToString
 @Getter
 public class Drink implements IMenuItem {
     private String nameRussian;

@@ -1,9 +1,11 @@
 package org.example;
 
 import lombok.AllArgsConstructor;
+import lombok.ToString;
 import org.example.Interfaces.IMenuItem;
 
 @AllArgsConstructor
+@ToString
 public class Dish implements IMenuItem {
     private String nameRussian;
     private String nameEnglish;
