@@ -41,4 +41,16 @@ public class MenuItemDAO {
             throw new RuntimeException(e);
         }
     }
+    public void deleteItem(String name){
+        String sql = "DELETE FROM menu WHERE name=?";
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql);) {
+
+            preparedStatement.setString(1, name);
+
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

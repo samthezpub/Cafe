@@ -51,8 +51,7 @@ public class App
         StaffDAO staffDAO = new StaffDAO(connection);
 
         CustomerDAO customerDAO = new CustomerDAO(connection);
-        Customer customer = new Customer("Андрей", "16-12-2005", "+79497309466", "lil.rhymes9@gmail.com", 0);
-        customerDAO.editDiscount(customer, 100.0);
+        customerDAO.deleteCustomer(1);
 
 
     }

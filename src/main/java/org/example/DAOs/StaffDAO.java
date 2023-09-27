@@ -57,4 +57,29 @@ public class StaffDAO {
             throw new RuntimeException(e);
         }
     }
+    public void deleteStaff(Staff staff){
+        String sql = "DELETE FROM staff WHERE name=? AND phone=?";
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql);) {
+
+            preparedStatement.setString(1, staff.getName());
+            preparedStatement.setString(2, staff.getPhone());
+
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void deleteStaff(int id){
+        String sql = "DELETE FROM staff WHERE id=?";
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql);) {
+
+            preparedStatement.setInt(1, id);
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

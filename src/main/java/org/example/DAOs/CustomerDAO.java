@@ -27,4 +27,15 @@ public class CustomerDAO {
             throw new RuntimeException(e);
         }
     }
+    public void deleteCustomer(int id){
+        String sql = "DELETE FROM client WHERE id=?";
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql);) {
+
+            preparedStatement.setInt(1, id);
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
