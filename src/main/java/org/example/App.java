@@ -63,7 +63,7 @@ public class App
 
         CustomerDAO customerDAO = new CustomerDAO(connection);
 
-        System.out.println(customerDAO.getAverageDiscount());
+        System.out.println(customerDAO.getWithoutEmailClients());
 
 
 

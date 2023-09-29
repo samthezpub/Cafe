@@ -4,11 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.example.Customer;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -150,5 +150,107 @@ public class CustomerDAO {
             System.out.println(e.getMessage());
         }
         return result;
+    }
+
+    public Customer getMaxAgeClient(){
+        String sql = "SELECT * FROM client WHERE birthdate = (SELECT MIN(birthdate) FROM client)";
+        Customer result = null;
+
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            ResultSet resultSet =  preparedStatement.executeQuery();
+
+            if (resultSet.next()){
+                result = new Customer(
+                        resultSet.getString("name"),
+                        resultSet.getString("birthdate"),
+                        resultSet.getString("phone"),
+                        resultSet.getString("email"),
+                        resultSet.getDouble("discount")
+                );
+            }
+        }catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
+
+    public Customer getMinAgeClient(){
+        String sql = "SELECT * FROM client WHERE birthdate = (SELECT MAX(birthdate) FROM client)";
+        Customer result = null;
+
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            ResultSet resultSet =  preparedStatement.executeQuery();
+
+            if (resultSet.next()){
+                result = new Customer(
+                        resultSet.getString("name"),
+                        resultSet.getString("birthdate"),
+                        resultSet.getString("phone"),
+                        resultSet.getString("email"),
+                        resultSet.getDouble("discount")
+                );
+            }
+        }catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
+
+    public Customer getBirthdayTodayClient(){
+        // Получаем текущую дату
+        LocalDate currentDate = LocalDate.now();
+
+        // Задаем формат даты
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+
+        // Форматируем дату в строку
+        String formattedDate = currentDate.format(formatter);
+
+        String sql = "SELECT * FROM client WHERE birthdate = ?";
+        Customer result = null;
+
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, formattedDate);
+            ResultSet resultSet =  preparedStatement.executeQuery();
+
+            if (resultSet.next()){
+                result = new Customer(
+                        resultSet.getString("name"),
+                        resultSet.getString("birthdate"),
+                        resultSet.getString("phone"),
+                        resultSet.getString("email"),
+                        resultSet.getDouble("discount")
+                );
+            }
+        }catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
+    public List<Customer> getWithoutEmailClients(){
+        List<Customer> customers = new ArrayList<>();
+
+        String sql = "SELECT * FROM client WHERE email IS NULL ";
+        ResultSet resultSet;
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                customers.add(
+                        new Customer(
+                                resultSet.getString("name"),
+                                resultSet.getString("birthdate"),
+                                resultSet.getString("phone"),
+                                resultSet.getString("email"),
+                                resultSet.getDouble("discount")
+                        )
+                );
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return customers;
     }
 };
