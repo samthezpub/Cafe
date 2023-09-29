@@ -6,6 +6,7 @@ import org.example.Customer;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @Getter
@@ -13,9 +14,9 @@ import java.sql.SQLException;
 public class CustomerDAO {
     private final Connection connection;
 
-    public void editDiscount(Customer customer, double discount){
+    public void editDiscount(Customer customer, double discount) {
         String sql = "UPDATE client SET discount=? WHERE name=? AND phone=?";
-        try(PreparedStatement preparedStatement = connection.prepareStatement(sql);) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql);) {
 
             preparedStatement.setDouble(1, discount);
             preparedStatement.setString(2, customer.getName());
@@ -27,9 +28,10 @@ public class CustomerDAO {
             throw new RuntimeException(e);
         }
     }
-    public void deleteCustomer(int id){
+
+    public void deleteCustomer(int id) {
         String sql = "DELETE FROM client WHERE id=?";
-        try(PreparedStatement preparedStatement = connection.prepareStatement(sql);) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql);) {
 
             preparedStatement.setInt(1, id);
 
@@ -38,4 +40,40 @@ public class CustomerDAO {
             throw new RuntimeException(e);
         }
     }
-}
+
+    public double getMinDiscount() {
+        String sql = "SELECT MIN(discount) FROM client";
+
+        double result = -1;
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            {
+                ResultSet resultSet = preparedStatement.executeQuery();
+                if (resultSet.next()) {
+                    result = resultSet.getDouble(1); // Используйте индекс колонки (1), а не имя колонки ("discount")
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return result;
+    }
+
+    public double getMaxDiscount() {
+        String sql = "SELECT MAX(discount) FROM client";
+
+        double result = -1;
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            {
+                ResultSet resultSet = preparedStatement.executeQuery();
+                if (resultSet.next()) {
+                    result = resultSet.getDouble(1); // Используйте индекс колонки (1), а не имя колонки ("discount")
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return result;
+    }
+};

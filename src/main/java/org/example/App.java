@@ -62,6 +62,10 @@ public class App
 
 
         CustomerDAO customerDAO = new CustomerDAO(connection);
+
+        System.out.println(customerDAO.getMaxDiscount());
+
+
         MenuItemDAO menuItemDAO = new MenuItemDAO(connection);
 
         var menuItems = menuItemDAO.getAll();
