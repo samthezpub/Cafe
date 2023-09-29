@@ -63,7 +63,8 @@ public class App
 
         CustomerDAO customerDAO = new CustomerDAO(connection);
 
-        System.out.println(customerDAO.getMaxDiscount());
+        System.out.println(customerDAO.getAverageDiscount());
+
 
 
         MenuItemDAO menuItemDAO = new MenuItemDAO(connection);

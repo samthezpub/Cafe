@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36085b3e-2702-447f-872b-34bf00fc1458" name="Changes" comment="Add get&lt;List&gt; method added to MenuItemDAO and StaffDAO">
+    <list default="true" id="36085b3e-2702-447f-872b-34bf00fc1458" name="Changes" comment="Min, Max discount CustomerDAO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/CustomerDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +71,7 @@
       <workItem from="1695834095384" duration="5270000" />
       <workItem from="1695916324636" duration="864000" />
       <workItem from="1695925569657" duration="850000" />
-      <workItem from="1696013864574" duration="1406000" />
+      <workItem from="1696013864574" duration="2997000" />
     </task>
     <task id="LOCAL-00001" summary="maven config added">
       <option name="closed" value="true" />
@@ -136,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695839405891</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Min, Max discount CustomerDAO">
+      <option name="closed" value="true" />
+      <created>1696015597757</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1696015597757</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +160,8 @@
     <MESSAGE value="PositionDAO, StaffDAO, MenuItemDAO" />
     <MESSAGE value="DELETE method for CustomerDAO, StaffDAO, MenuItemDAO" />
     <MESSAGE value="Add get&lt;List&gt; method added to MenuItemDAO and StaffDAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add get&lt;List&gt; method added to MenuItemDAO and StaffDAO" />
+    <MESSAGE value="Min, Max discount CustomerDAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Min, Max discount CustomerDAO" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

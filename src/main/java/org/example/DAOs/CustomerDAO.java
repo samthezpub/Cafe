@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @AllArgsConstructor
@@ -74,6 +76,79 @@ public class CustomerDAO {
             System.out.println(e.getMessage());
         }
 
+        return result;
+    }
+
+    public List<Customer> getMinDiscountClients() {
+        double minDiscount = getMinDiscount();
+        List<Customer> customers = new ArrayList<>();
+
+        String sql = "SELECT * FROM client WHERE discount=?";
+        ResultSet resultSet;
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setDouble(1, minDiscount);
+
+            resultSet = preparedStatement.executeQuery();
+                while (resultSet.next()) {
+                    customers.add(
+                            new Customer(
+                                    resultSet.getString("name"),
+                                    resultSet.getString("birthdate"),
+                                    resultSet.getString("phone"),
+                                    resultSet.getString("email"),
+                                    resultSet.getDouble("discount")
+                            )
+                    );
+                }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return customers;
+    }
+
+    public List<Customer> getMaxDiscountClients() {
+        double minDiscount = getMaxDiscount();
+        List<Customer> customers = new ArrayList<>();
+
+        String sql = "SELECT * FROM client WHERE discount=?";
+        ResultSet resultSet;
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setDouble(1, minDiscount);
+
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                customers.add(
+                        new Customer(
+                                resultSet.getString("name"),
+                                resultSet.getString("birthdate"),
+                                resultSet.getString("phone"),
+                                resultSet.getString("email"),
+                                resultSet.getDouble("discount")
+                        )
+                );
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return customers;
+    }
+    public double getAverageDiscount(){
+        String sql = "SELECT AVG(discount) FROM client";
+        double result = -1;
+
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+          ResultSet resultSet =  preparedStatement.executeQuery();
+
+          if (resultSet.next()){
+              result = resultSet.getDouble(1);
+          }
+        }catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
         return result;
     }
 };
